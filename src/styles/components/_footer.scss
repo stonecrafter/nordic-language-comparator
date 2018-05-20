@@ -1,0 +1,13 @@
+.footer {
+  background-color: $color-primary;
+  height: 100%;
+  padding: $m-size;
+  font-size: $s-size;
+
+  &__items {
+    @include widthAndCenter(90vw);
+
+    display: flex;
+    justify-content: space-between;
+  }
+}

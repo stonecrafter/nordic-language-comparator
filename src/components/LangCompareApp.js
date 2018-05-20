@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './Header';
+import Footer from './Footer';
 import EnglishInput from './EnglishInput';
 import TranslatedResult from './TranslatedResult';
 import { getTranslations } from './helpers/requestHelpers';
@@ -68,6 +69,7 @@ export default class LangCompareApp extends React.Component {
             value={translated.fi}
           />
         </div>
+        <Footer />
       </div>
     );
   }

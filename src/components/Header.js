@@ -49,7 +49,7 @@ export default class Header extends React.Component {
           <div className="modal__body">
             <p>An interactive illustration of the similarites and differences between the five major languages of the Nordic region.</p>
 
-            <p>Automatic translations are <a href="http://translate.yandex.com/">powered by Yandex.Translate</a>.
+            <p>Automatic translations are powered by <a href="http://translate.yandex.com/">Yandex.Translate</a>.
             There are more than five officially recognised languages, but they are not supported by the translation service.
             Click <a href="https://www.norden.org/en/fakta-om-norden-1/nordic-dictionaries">here</a> to learn more.</p>
           </div>

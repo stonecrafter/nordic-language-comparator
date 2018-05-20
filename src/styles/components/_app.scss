@@ -16,5 +16,7 @@
 
   &__translated {
     @include widthAndCenter(80vw);
+
+    margin-bottom: $l-size;
   }
 }

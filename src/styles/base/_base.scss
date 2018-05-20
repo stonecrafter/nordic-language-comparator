@@ -34,10 +34,12 @@ h4 {
 
 p {
   line-height: 1.6;
+  color: initial;
 }
 
 a {
   color: $color-primary-dark;
+  text-decoration: none;
 
   &:hover {
     color: $btn-hover-color;
