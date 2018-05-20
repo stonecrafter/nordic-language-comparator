@@ -1,0 +1,20 @@
+.app {
+
+  &__title-area {
+    height: 60vh;
+    background-image: url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__title {
+    text-align: center;
+    padding-top: 16rem;
+    margin: auto;
+  }
+
+  &__translated {
+    @include widthAndCenter(80vw);
+  }
+}

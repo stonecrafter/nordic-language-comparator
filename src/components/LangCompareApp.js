@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from './Header';
 import EnglishInput from './EnglishInput';
 import TranslatedResult from './TranslatedResult';
 import { getTranslations } from './helpers/requestHelpers';
@@ -17,25 +18,30 @@ export default class LangCompareApp extends React.Component {
   }
 
   handleEngQuery = async (query) => {
-    this.setState((prevState) => ({ isFetching: true }));
-    const { no, da, sv, is, fi } = await getTranslations(query);
-    this.setState((prevState) => ({
-      isFetching: false,
-      translated: { no, da, sv, is, fi }
-    }));
+    if (!this.state.isFetching) {
+      this.setState((prevState) => ({ isFetching: true }));
+      const { no, da, sv, is, fi } = await getTranslations(query);
+      this.setState((prevState) => ({
+        isFetching: false,
+        translated: { no, da, sv, is, fi }
+      }));
+    }
   }
 
   render() {
     const translated = this.state.translated;
 
     return (
-      <div>
-        <h1>Compare Nordic Languages</h1>
-        <EnglishInput
-          handleEngQuery={this.handleEngQuery}
-          isFetching={this.state.isFetching}
-        />
-        <div className="translated">
+      <div className="app">
+        <Header />
+        <div className="app__title-area">
+          <h1 className="app__title">Compare Nordic Languages</h1>
+          <EnglishInput
+            handleEngQuery={this.handleEngQuery}
+            isFetching={this.state.isFetching}
+          />
+        </div>
+        <div className="app__translated">
           <TranslatedResult
             key="no"
             lang="Norwegian"

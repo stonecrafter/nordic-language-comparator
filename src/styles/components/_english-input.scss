@@ -1,0 +1,27 @@
+.english-input {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  display: flex;
+
+  &__input {
+    margin-right: $s-size;
+    width: 30rem;
+    padding: .5rem 1rem;
+    flex-grow: 1;
+  }
+
+  button {
+    background-color: $color-primary-dark;
+    border-radius: .2rem;
+    padding: 1rem 1.5rem;
+    color: $color-primary;
+    font-weight: 300;
+
+    &:hover {
+      background-color: lighten($color-primary-dark, 15%);
+    }
+  }
+}

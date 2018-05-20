@@ -1,0 +1,15 @@
+.header {
+  background-color: $color-primary-dark;
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  z-index: 100;
+
+  &__items {
+    @include widthAndCenter(90vw);
+
+    display: flex;
+    justify-content: space-between;
+    color: $color-primary-light;
+  }
+}

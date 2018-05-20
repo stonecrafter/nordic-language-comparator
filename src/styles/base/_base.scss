@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: $m-size;
 }
 
@@ -13,4 +13,19 @@ button {
 
 button:disabled {
   cursor: default;
+}
+
+h4 {
+  font-weight: 500;
+}
+
+input[type=text] {
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid $color-primary;
+
+  &:focus {
+    box-shadow: 0 0 5px $color-primary;
+    border: 1px solid $color-primary
+  }
 }

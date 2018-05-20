@@ -1,9 +1,9 @@
 import React from 'react';
 
 const TranslatedResult = (props) => (
-  <div>
-    <h4>{props.lang}</h4>
-    <div>
+  <div className="translated-result">
+    <h4 className="translated-result__lang">{props.lang}</h4>
+    <div className="translated-result__translated">
       {props.value}
     </div>
   </div>

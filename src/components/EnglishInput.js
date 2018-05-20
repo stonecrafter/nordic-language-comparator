@@ -8,24 +8,28 @@ export default class EnglishInput extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const query = e.target.elements.engQuery.value.trim();
-    e.target.elements.engQuery.value = '';
 
-    const error = await this.props.handleEngQuery(query);
-
-    this.setState(() => ({ error }));
+    if (query) {
+      const error = await this.props.handleEngQuery(query);
+      this.setState(() => ({ error }));
+    }
   }
 
   render() {
     return (
-      <div>
-        <form className="eng-form" onSubmit={this.handleSubmit}>
-          <input className="eng-form__input" type="text" name="engQuery"/>
-          <button
-            className="button"
-            disabled={this.props.isFetching}
-          >{this.props.isFetching ? 'Translating...' : 'Translate'}</button>
-        </form>
-      </div>
+      <form className="english-input" onSubmit={this.handleSubmit}>
+        <input
+          className="english-input__input"
+          type="text"
+          name="engQuery"
+          placeholder="Enter English text"
+          autoComplete="off"
+        />
+        <button
+          className="button"
+          disabled={this.props.isFetching}
+        >{this.props.isFetching ? 'Translating...' : 'Translate'}</button>
+      </form>
     );
   }
 }
