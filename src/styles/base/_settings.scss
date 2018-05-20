@@ -4,6 +4,9 @@ $color-primary-light: #CFCBF1;
 $color-primary-dark: #4D3664;
 $color-secondary-light: #E1FFCF;
 
+$btn-hover-color: lighten($color-primary-dark, 15%);
+$btn-focus-color: lighten($color-primary-dark, 10%);
+
 // Spacing
 $s-size: 1.2rem;
 $m-size: 1.6rem;

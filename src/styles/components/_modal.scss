@@ -1,0 +1,57 @@
+// These augment existing styles declared by the library
+.ReactModal__Overlay {
+  z-index: 10000;
+}
+
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  transition: opacity 200ms ease-in-out;
+  background: rgba(0, 0, 0, 0.15);
+
+  &--after-open {
+    opacity: 1;
+  }
+  &--before-close {
+    opacity: 0;
+  }
+}
+
+// Styles for class defined here, no library equivalent
+.modal {
+  background: $color-primary-light;
+  color: $color-primary-dark;
+  outline: none;
+  padding: $m-size;
+  text-align: center;
+  box-shadow: 0 0 5px $color-primary-dark;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70vh;
+  width: 60vw;
+}
+
+.modal__close {
+  text-align: right;
+
+  &:hover {
+    color: $btn-hover-color;
+  }
+}
+
+.modal__title {
+  font-size: $l-size;
+  font-weight: 700;
+}
+
+.modal__body {
+  margin: $l-size 0;
+  padding: 0 2rem;
+  overflow: auto;
+  max-height: 85%;
+}

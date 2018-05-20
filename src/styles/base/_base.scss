@@ -9,14 +9,39 @@ body {
 
 button {
   cursor: pointer;
-}
+  background-color: $color-primary-dark;
+  padding: 1rem 1.5rem;
+  color: $color-primary;
+  font-weight: 300;
 
-button:disabled {
-  cursor: default;
+  &:hover {
+    background-color: $btn-hover-color;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $btn-focus-color;
+  }
 }
 
 h4 {
   font-weight: 500;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: $color-primary-dark;
+
+  &:hover {
+    color: $btn-hover-color;
+  }
 }
 
 input[type=text] {

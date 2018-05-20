@@ -7,6 +7,7 @@ export default class EnglishInput extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
+    // TODO: Is there a better way to retrieve the value?
     const query = e.target.elements.engQuery.value.trim();
 
     if (query) {
@@ -26,7 +27,9 @@ export default class EnglishInput extends React.Component {
           autoComplete="off"
         />
         <button
-          className="button"
+          ref={c => this.submitButton = c}
+          onClick={() => this.submitButton.blur()}
+          className="button bdr-radius-sm"
           disabled={this.props.isFetching}
         >{this.props.isFetching ? 'Translating...' : 'Translate'}</button>
       </form>
