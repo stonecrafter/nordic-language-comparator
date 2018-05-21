@@ -29,7 +29,7 @@ export default class EnglishInput extends React.Component {
         <button
           ref={c => this.submitButton = c}
           onClick={() => this.submitButton.blur()}
-          className="button bdr-radius-sm"
+          className="english-input__button bdr-radius-sm"
           disabled={this.props.isFetching}
         >{this.props.isFetching ? 'Translating...' : 'Translate'}</button>
       </form>

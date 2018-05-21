@@ -27,7 +27,7 @@ export default class Header extends React.Component {
     return (
       <header className="header">
         <div className="header__items">
-          <h4>Nordic Language Comparator</h4>
+          <h4 className="header__title">Nordic Language Comparator</h4>
           <button
             ref={c => this.btn = c}
             className="header__about"
@@ -45,7 +45,7 @@ export default class Header extends React.Component {
           className="modal"
         >
           <div className="modal__close clickable" onClick={this.handleCloseModal}>X</div>
-          <div className="modal__title">About</div>
+          <h1 className="modal__title">About</h1>
           <div className="modal__body">
             <p>An interactive illustration of the similarites and differences between the five major languages of the Nordic region.</p>
 
