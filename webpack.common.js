@@ -1,10 +1,11 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.join(__dirname, 'public'),  
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'dist'),  
+    filename: '[name].[chunkhash].js'
   },
   module: {
     rules: [{
@@ -14,7 +15,7 @@ module.exports = {
     },
     {
       test: /\.scss$/,
-      loader: 'style-loader!css-loader!resolve-url-loader!sass-loader?sourceMap'
+      loader: 'style-loader!css-loader!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
     },
     {
       test: /\.css$/,
@@ -26,17 +27,16 @@ module.exports = {
     },
     {
       test: /\.(png|svg|jpg|gif)$/,
-      use: [
-        'file-loader'
-      ]
+      loader: 'file-loader'
     },
     {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'file-loader'
     }]
   },
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'public')
-  }
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    })
+  ]
 };
