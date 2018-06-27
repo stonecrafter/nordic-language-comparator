@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.join(__dirname, 'dist'),  
+    // Publishing to 'docs' for compatibility with gh-pages hosting
+    path: path.join(__dirname, 'docs'),
     filename: '[name].[chunkhash].js'
   },
   module: {
