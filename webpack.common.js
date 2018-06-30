@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js',
@@ -36,8 +37,13 @@ module.exports = {
     }]
   },
   plugins: [
+    // Included generated bundle.js reference in index.html
     new HtmlWebpackPlugin({
       template: 'index.html'
-    })
+    }),
+    // Copy static images directory to build directory to preserve references in index.html
+    new CopyWebpackPlugin([
+      { from: 'images', to: 'images' }
+    ])
   ]
 };
